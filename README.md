@@ -12,5 +12,5 @@
 - Sub-GHzにreceiver.cを書き込む
 
 ## シリアル通信
-![](serial_motnitor.png)
+![serial_monitor](https://user-images.githubusercontent.com/45725019/97701158-4e1e1680-1af0-11eb-9b71-5a77be0029f3.png)
 
