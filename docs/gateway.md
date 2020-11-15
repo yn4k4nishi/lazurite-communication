@@ -108,7 +108,7 @@ systemd status laz-com.service
 
 自動起動を有効にする。
 ```bash
-sudo systemctl enable test.service
+sudo systemctl enable laz-com.service
 ```
 
 以上で、電源投入時に自動でスクリプトが走り、slackに通知が飛ぶ。
