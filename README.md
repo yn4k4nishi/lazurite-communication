@@ -9,7 +9,10 @@
   
 ## プログラム
 - 920jに[examples/07.SwitchScience/EnvShield_subghz/](https://github.com/LAPIS-Lazurite/LazuriteIDE_0.10.x/blob/release-Mar2020/examples/07.SwitchScience/EnvShield_subghz/EnvShield_subghz.c)を書き込む
+  - 32行目の`#define SUBGHZ_HOST_ADDR	0xFFFF`はデバイスに書いてあるQRコードの右下の右から4桁に変更する必要あり。
+  - 00043040の場合、0x3040にする。
 - Sub-GHzにreceiver.cを書き込む
+  - Aruduinoと同様にreceiver.cとreceiver.h は receiverディレクトリ内である必要がある。
 
 ## シリアル通信
 ![serial_monitor](https://user-images.githubusercontent.com/45725019/97701158-4e1e1680-1af0-11eb-9b71-5a77be0029f3.png)
