@@ -5,7 +5,9 @@ import time
 import csv
 import datetime
 
-# file path
+import slack_notify
+
+# log file path
 file_path = "log.csv"
 
 global cont
@@ -35,15 +37,18 @@ while cont:
         temp_act = payload.split(',')[0]
         press_act = payload.split(',')[1]
         hum_act = payload.split(',')[2]
-
-        print(date + " : " + temp_act + "[degree]\t" + press_act + "[hPa]\t" + hum_act + "[%]" )
+        
+        msg = date + " : " + temp_act + "[degree]\t" + press_act + "[hPa]\t" + hum_act + "[%]" 
+        
+        print(msg)
+        slack_notify.notify(msg)
 
         # write CSV
         with open(file_path, 'a') as f:
             writer = csv.writer(f)
             writer.writerow([date,temp_act, press_act, hum_act])
 
-    time.sleep(0.01)
+    time.sleep(1)
 
 
 result = lazurite.rxDisable()
