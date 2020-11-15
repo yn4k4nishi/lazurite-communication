@@ -1,2 +1,3 @@
 lock
 *.ssf
+raspi/__*
