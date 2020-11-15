@@ -1,17 +1,19 @@
 ## 概要
-switch sienceの環境センサ基板とlazurite gateway(rasberry pi)で通信し
+switch sienceの環境センサ基板とlazurite gateway(raspberry pi)で通信し
 環境センサ基板で得たセンサーの値をslackに流す
 
 ## デバイス
-- 環境センサ基板
-- rasberry pi 3B+
+- [Lazurite 920J(Lazurite Miniシリーズ)](https://www.switch-science.com/catalog/2955/)
+  - [Lazurite mini用環境センサ基板](https://www.switch-science.com/catalog/3128/)を接続
+- [Raspberry pi 3B+](https://raspberry-pi.ksyic.com/main/index/pdp.id/435/pdp.open/435)
+  - [Lazurite Pi Gateway](https://www.lapis-tech.com/lazurite-jp/products/lazurite-pi-gateway)を接続
 
 ## 環境構築
 ### 環境センサ基板
 subGHzの時と同じ(host addressだけ変更)
 
-### rasberry pi
-rasberry pi osを書き込み、sshで接続できるようにした。
+### raspberry pi
+raspberry pi osを書き込み、sshで接続できるようにした。
 
 rootディレクトリにインストーラをクローン
 ```bash
@@ -56,10 +58,10 @@ webhookを使ってslackに投稿する。
 - https://qiita.com/shtnkgm/items/4f0e4dcbb9eb52fdf316
 
 webhook URLは環境変数に設定する
-.bashrcに以下を追記
+.bashrcにslackの設定から取得したurlを以下のように追記
 ```bash
 ## slack webhook
-export SLACK_WEBHOOK="https://hooks.slack.com/services/xxxXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
+export SLACK_WEBHOOK="https://hooks.slack.com/services/XXXXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
 ```
 
 webhookのテストは以下を走らせればできます。
@@ -72,17 +74,16 @@ python3 slack_notify.py
 python3 main.py
 ```
 
-## rasberry pi で起動時に自動的に実行する
+## raspberry pi で起動時に自動的に実行する
 systemdを使う
 - https://www.raspberrypirulo.net/entry/systemd
-
-/lib/systemd/system/laz-com.serviceを作成
 
 service用に環境変数を設定する
 /etc/sysconfig/slack_webhookを作成
 ``` 
-SLACK_WEBHOOK="https://hooks.slack.com/services/xxxXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
+SLACK_WEBHOOK="https://hooks.slack.com/services/XXXXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
 ```
+
 /etc/systemd/system/laz-com.serviceを作成する。
 ```laz-com.service
 [Unit]
