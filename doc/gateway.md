@@ -34,20 +34,11 @@ git clone https://github.com/LAPIS-Lazurite/PyLaz.git
 ```
 
 
-## 作業ログ
-サンプルを実行したらエラーでた
+サンプルを実行する。
 ```bash
 cd workspace/PyLaz
 python3 sample/rxsample.py
 ```
-
-エラーメッセージ
-> insmod: ERROR: could not insert module /home/pi/driver/LazDriver/lazdriver.ko: File exists
-
-`result = lazurite.init()`でエラーを吐いてる。
-原因はカーネルのバージョンが違うから？
-
-一度インストールし直した場合、初回実行は上手くいったが、2回目からは同じエラーでダメ
 
 ## 参考サイト
 - [Lazurite Linuxライブラリ用日本語リファレンス](https://www.lapis-tech.com/lazurite-jp/contents/gateway/reference/default.html)
