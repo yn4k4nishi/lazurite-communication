@@ -1,4 +1,4 @@
-# lazurite-communication
+## 概要
 920jに繋がった環境センサ基板からデータをとり、Sub-GHzに送信しPCにシリアル通信で値を送信。
 
 ## 環境
