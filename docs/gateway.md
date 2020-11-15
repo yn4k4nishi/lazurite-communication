@@ -1,6 +1,9 @@
 ## 概要
-switch sienceの環境センサ基板とlazurite gateway(raspberry pi)で通信し
+switch sienceの環境センサ基板とlazurite gateway(raspberry pi)で通信し、
 環境センサ基板で得たセンサーの値をslackに流す
+同時にlog.csvにも「時間、気温、気圧、湿度」を記録する。
+
+![image](https://user-images.githubusercontent.com/45725019/99181019-ea8e1d00-276e-11eb-95ac-3d392316f965.png)
 
 ## デバイス
 - [Lazurite 920J(Lazurite Miniシリーズ)](https://www.switch-science.com/catalog/2955/)
@@ -11,6 +14,7 @@ switch sienceの環境センサ基板とlazurite gateway(raspberry pi)で通信�
 ## 環境構築
 ### 環境センサ基板
 subGHzの時と同じ(host addressだけ変更)
+- https://github.com/yn4k4nishi/lazurite-communication/blob/master/docs/sub-GHz.md
 
 ### raspberry pi
 raspberry pi osを書き込み、sshで接続できるようにした。
@@ -64,7 +68,7 @@ webhook URLは環境変数に設定する
 export SLACK_WEBHOOK="https://hooks.slack.com/services/XXXXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
 ```
 
-webhookのテストは以下を走らせればできます。
+webhookのテストは以下を走らせればできる。
 ```bash
 python3 slack_notify.py
 ```
@@ -116,3 +120,5 @@ sudo systemctl enable laz-com.service
 ## 参考サイト
 - [Lazurite Linuxライブラリ用日本語リファレンス](https://www.lapis-tech.com/lazurite-jp/contents/gateway/reference/default.html)
 - [LAPIS-Lazurite/PyLaz](https://github.com/LAPIS-Lazurite/PyLaz)
+- [Python3でslackに投稿する](https://qiita.com/shtnkgm/items/4f0e4dcbb9eb52fdf316)
+- [Raspberry Piでsystemdを使ってpythonを自動実行する] (https://www.raspberrypirulo.net/entry/systemd)
