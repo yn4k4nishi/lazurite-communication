@@ -6,7 +6,7 @@ webhook URLは環境変数に設定する
 .bashrcに以下を追記
 ```bash
 ## slack webhook
-export SLACK_WEBHOOK="https://hooks.slack.com/services/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"
+export SLACK_WEBHOOK="https://hooks.slack.com/services/xxxXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
 ```
 
 webhookのテストは以下を走らせればできます。
@@ -28,7 +28,7 @@ systemdを使う
 service用に環境変数を設定する
 /etc/sysconfig/slack_webhookを作成
 ``` 
-SLACK_WEBHOOK=https://hooks.slack.com/services/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
+SLACK_WEBHOOK="https://hooks.slack.com/services/xxxXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX"
 ```
 
 ```laz-com.service
@@ -49,4 +49,3 @@ WantedBy=multi-user.target
 ```bash
 sudo systemctl enable test.service
 ```
-
