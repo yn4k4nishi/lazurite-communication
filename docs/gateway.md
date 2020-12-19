@@ -121,4 +121,4 @@ sudo systemctl enable laz-com.service
 - [Lazurite Linuxライブラリ用日本語リファレンス](https://www.lapis-tech.com/lazurite-jp/contents/gateway/reference/default.html)
 - [LAPIS-Lazurite/PyLaz](https://github.com/LAPIS-Lazurite/PyLaz)
 - [Python3でslackに投稿する](https://qiita.com/shtnkgm/items/4f0e4dcbb9eb52fdf316)
-- [Raspberry Piでsystemdを使ってpythonを自動実行する] (https://www.raspberrypirulo.net/entry/systemd)
+- [Raspberry Piでsystemdを使ってpythonを自動実行する](https://www.raspberrypirulo.net/entry/systemd)
