@@ -1,3 +1,4 @@
 lock
 *.ssf
 raspi/__*
+raspi/*.json
