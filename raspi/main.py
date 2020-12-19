@@ -44,7 +44,7 @@ while cont:
         print(msg)
         # slack_notify.notify(msg)
 
-        data = [data, temp_act, press_act, hum_act]
+        data = [date, temp_act, press_act, hum_act]
         write_gspread.writeGoogleSpredSheet(data)
 
         # write CSV
