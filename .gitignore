@@ -2,3 +2,4 @@ lock
 *.ssf
 raspi/__*
 *.csv
+raspi/*.json

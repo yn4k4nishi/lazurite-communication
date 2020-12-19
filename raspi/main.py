@@ -6,6 +6,7 @@ import csv
 import datetime
 
 import slack_notify
+import write_gspread
 
 # log file path
 file_path = "log.csv"
@@ -39,9 +40,12 @@ while cont:
         hum_act = payload.split(',')[2]
         
         msg = date + " : " + temp_act + "[degree]\t" + press_act + "[hPa]\t" + hum_act + "[%]" 
-        
         print(msg)
+        
         slack_notify.notify(msg)
+
+        data = [data,temp_act,press_act,hum_act]
+        write_gspread.writeGoogleSpredSheet(data)
 
         # write CSV
         with open(file_path, 'a') as f:
