@@ -7,7 +7,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
 
-json_path = '/home/ynakanishi/workspace/lazurite-communication/raspi/config.json'
+json_path = '/home/pi/workspace/lazurite-communication/raspi/config.json'
 sheet_name = 'ラズライト 環境センサ ログ'
 
 def writeGoogleSpredSheet(values):
