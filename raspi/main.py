@@ -40,11 +40,11 @@ while cont:
         hum_act = payload.split(',')[2]
         
         msg = date + " : " + temp_act + "[degree]\t" + press_act + "[hPa]\t" + hum_act + "[%]" 
-        print(msg)
         
-        slack_notify.notify(msg)
+        print(msg)
+        # slack_notify.notify(msg)
 
-        data = [data,temp_act,press_act,hum_act]
+        data = [data, temp_act, press_act, hum_act]
         write_gspread.writeGoogleSpredSheet(data)
 
         # write CSV
